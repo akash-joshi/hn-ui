@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:prod": "npm run build && node server/bootstrap.js"
+    "start:prod": "npm run build && node server/bootstrap.js",
+    "lint": "eslint --ext js,jsx,tsx . --fix --quiet"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,13 +54,14 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^3.0.0",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
     "prettier": "^1.19.1",
     "typescript": "^3.9.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint --ext js,jsx,tsx . --fix --quiet"
+      "pre-commit": "npm run lint"
     }
   }
 }

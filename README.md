@@ -11,7 +11,10 @@ An opinionated eslint and prettier config is used to ensure high code quality.
 Husky is used to ensure obviously broken code is never pushed.
 
 ### 3. Server-side Rendering:
-If you check the `server/` folder, you will find the code which is used for SSR. Babel and react-dom/server are used to hydrate the JS before sending it to the user.
+If you check the `server/` folder, you will find the code which is used for SSR. Babel and react-dom/server are used to build the initial webpage on server-side before sending it to the client.
+
+### 4. Github Actions for CI:
+Github Actions is used to lint, build and test each commit to ensure nothing is broken.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

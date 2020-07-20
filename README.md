@@ -1,3 +1,18 @@
+# HN-UI
+
+A project to learn the best practises about web-development and accessibility by building a HN clone in create-react-app with SSR.
+
+## About the Tech Stack:
+
+### 1. Linting and Prettifying Code:
+An opinionated eslint and prettier config is used to ensure high code quality.
+
+### 2. Pre-commit Hooks:
+Husky is used to ensure obviously broken code is never pushed.
+
+### 3. Server-side Rendering:
+If you check the `server/` folder, you will find the code which is used for SSR. Babel and react-dom/server are used to hydrate the JS before sending it to the user.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

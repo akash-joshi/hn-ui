@@ -4,7 +4,6 @@
     "plugin:react/recommended",
     "prettier",
     "prettier/react",
-    "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/strict"
   ],
   "parser": "@typescript-eslint/parser",
@@ -15,6 +14,7 @@
     "jest": true
   },
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
     "eqeqeq": "error",
     "prefer-destructuring": "error",
@@ -53,5 +53,5 @@
       "jsx": true
     }
   },
-  "plugins": ["react", "import"]
+  "plugins": ["react", "import", "react-hooks"]
 }

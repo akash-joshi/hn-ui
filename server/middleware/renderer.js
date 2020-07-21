@@ -19,11 +19,11 @@ export default (req, res) => {
       return res.status(404).end();
     }
 
-    const storiesResponse = await axios.get(
-      `https://hn.algolia.com/api/v1/search?tags=story`
-    );
+    // const storiesResponse = await axios.get(
+    //   `https://hn.algolia.com/api/v1/search?tags=story`
+    // );
 
-    console.log(storiesResponse.data.hits);
+    // console.log(storiesResponse.data.hits);
 
     const sheet = new ServerStyleSheet();
 
@@ -31,7 +31,7 @@ export default (req, res) => {
 
     // render the app as a string
     const html = ReactDOMServer.renderToString(
-      sheet.collectStyles(<App initialStories={storiesResponse.data.hits} />)
+      sheet.collectStyles(<App />)
     );
 
     console.log(html)

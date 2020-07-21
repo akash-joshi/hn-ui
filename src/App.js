@@ -7,6 +7,8 @@ import "./App.css";
 const Header = styled.header`
   display: grid;
   grid-template-columns: 90px 90px 90px 1fr;
+  color: white;
+  background: rgb(255, 80, 0);
 `;
 
 const MainGrid = styled.section`
@@ -15,8 +17,7 @@ const MainGrid = styled.section`
 `;
 
 function App({ initialStories }) {
-
-  console.log(initialStories)
+  console.log(initialStories);
 
   const [stories, setStories] = useState(initialStories || []);
   const [page] = useState(1);

@@ -1,22 +1,18 @@
-require('ignore-styles');
+require("ignore-styles");
+require("regenerator-runtime/runtime");
 
-require('@babel/register')({
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react"
-  ],
-  "plugins": [
+require("@babel/register")({
+  presets: ["@babel/preset-env", "@babel/preset-react"],
+  plugins: [
     [
       "transform-assets",
       {
-        "extensions": [
-          "css",
-          "svg"
-        ],
-        "name": "static/media/[name].[hash:8].[ext]"
-      }
-    ]
-  ]
+        extensions: ["css", "svg"],
+        name: "static/media/[name].[hash:8].[ext]",
+      },
+    ],
+    ["babel-plugin-styled-components"],
+  ],
 });
 
-require('./index');
+require("./index");

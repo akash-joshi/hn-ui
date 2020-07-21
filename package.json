@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "tests": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "start:prod": "npm run build && node server/bootstrap.js",
     "lint": "eslint --ext js,jsx,tsx . --fix --quiet"
@@ -65,7 +66,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint && npm run tests"
     }
   }
 }

@@ -1,24 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import axios from "axios";
 
-function App() {
+import "./App.css";
+
+const Header = styled.header`
+  display: grid;
+  grid-template-columns: 90px 90px 90px 1fr;
+  color: white;
+  background: rgb(255, 80, 0);
+`;
+
+const MainGrid = styled.section`
+  display: grid;
+  grid-template-columns: 90px 90px 90px 1fr;
+`;
+
+function App({ initialStories }) {
+  console.log(initialStories);
+
+  const [stories, setStories] = useState(initialStories || []);
+  const [page] = useState(1);
+
+  useEffect(() => {
+    axios
+      .get(`https://hn.algolia.com/api/v1/search?tags=story&page=${page}`)
+      .then((r) => setStories(r.data.hits));
+  }, [page]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header>
+        <span>Comments</span>
+        <span>Vote Count</span>
+        <span>Upvote</span>
+        <span>News Details</span>
+      </Header>
+      <main>
+        {stories.map((story, index) => (
+          <MainGrid key={index}>
+            <span>{story.num_comments}</span>
+            <span>{story.points}</span>
+            <span>Doot</span>
+            <span>{story.title}</span>
+          </MainGrid>
+        ))}
+      </main>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 # HN-UI
+![Node.js CI](https://github.com/akash-joshi/accessible-hn/workflows/Node.js%20CI/badge.svg)
 
 A project to learn the best practises about web-development and accessibility by building a HN clone in create-react-app with SSR.
 

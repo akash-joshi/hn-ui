@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
-import axios from "axios";
+// import axios from "axios";
 import { ServerStyleSheet } from "styled-components";
 
 // import our main App component

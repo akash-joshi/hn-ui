@@ -1,6 +1,6 @@
 import express from "express";
-const expressStaticGzip = require("express-static-gzip");
 import serverRenderer from "./middleware/renderer";
+const expressStaticGzip = require("express-static-gzip");
 
 const PORT = 3000;
 const path = require("path");

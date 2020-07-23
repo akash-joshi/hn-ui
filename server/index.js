@@ -1,5 +1,6 @@
 import express from "express";
 import serverRenderer from "./middleware/renderer";
+const expressStaticGzip = require("express-static-gzip");
 
 const PORT = 3000;
 const path = require("path");
@@ -10,6 +11,12 @@ const router = express.Router();
 
 // root (/) should always serve our server rendered page
 router.use("^/$", serverRenderer);
+
+router.use(
+  expressStaticGzip(path.join(__dirname, 'build'), {
+  enableBrotli: true, // only if you have brotli files too
+  }),
+);
 
 // other static resources should just be served as they are
 router.use(

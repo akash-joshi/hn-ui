@@ -2,7 +2,7 @@ import express from "express";
 import serverRenderer from "./middleware/renderer";
 const expressStaticGzip = require("express-static-gzip");
 
-const PORT = 3000;
+const PORT = process.env.port || 3000;
 const path = require("path");
 
 // initialize the application and create the routes

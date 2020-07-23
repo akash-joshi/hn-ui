@@ -17,6 +17,11 @@ If you check the `server/` folder, you will find the code which is used for SSR.
 ### 4. Github Actions for CI:
 Github Actions is used to lint, build and test each commit to ensure nothing is broken.
 
+## Design Considerations:
+
+1. Header text is made black instead of white for higher a11y score.
+2. Graph is allowed to hide some elements to allow ID readability.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

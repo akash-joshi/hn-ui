@@ -24,6 +24,7 @@ The complete data layer has been abstracted into the `data.js` file.
 
 1. Header text is made black instead of white for higher a11y score.
 2. Graph is allowed to hide some elements to allow ID readability, might be replaced in the future.
+3. The webapp has been optimized for: Screens wider than 1000px, an 11-inch iPad, a 6-inch smartphone.
 
 ## CRA Boilerplate from here:
 

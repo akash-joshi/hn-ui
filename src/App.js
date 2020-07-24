@@ -9,7 +9,7 @@ const hnOrange = `rgb(255, 102, 0)`;
 
 const Header = styled.header`
   display: grid;
-  grid-template-columns: 80px 50px 60px 1fr;
+  grid-template-columns: 80px 45px 55px 1fr;
   color: black;
   background: ${hnOrange};
   padding: 0.5em;
@@ -18,7 +18,7 @@ const Header = styled.header`
 
 const MainGrid = styled.section`
   display: grid;
-  grid-template-columns: 80px 50px 60px 1fr;
+  grid-template-columns: 80px 45px 55px 1fr;
   padding: 0.5em;
   background: ${(props) =>
     props.odd ? `rgb(244,244,238)` : `rgb(229,229,222)`};

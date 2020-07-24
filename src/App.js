@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import axios from "axios";
 
 import "./App.css";
 import LineChart from "./LineChart";
+import Data from "./data";
 
 const hnOrange = `rgb(255, 102, 0)`;
 
@@ -28,21 +28,17 @@ const GridSpan = styled.span`
   text-align: center;
 `;
 
-function App({ initialStories }) {
-  console.log(initialStories);
+const UnstyledButton = styled.button`
+  background: transparent;
+  border: 0px;
+`;
 
+function App() {
   const isBrowser = typeof window !== `undefined`;
 
-  const [stories, setStories] = useState(initialStories || []);
   const page = isBrowser ? parseInt(location.href.split("page=")[1]) || 1 : 1;
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://hn.algolia.com/api/v1/search_by_date?tags=story&page=${page}`
-      )
-      .then((r) => setStories(r.data.hits));
-  }, [page]);
+  const { stories, hideStory, upvoteStory } = Data(page);
 
   return (
     <div style={{ background: "rgb(244,244,238)", minHeight: "100vh" }}>
@@ -58,7 +54,9 @@ function App({ initialStories }) {
             <GridSpan>{story.num_comments}</GridSpan>
             <GridSpan>{story.points}</GridSpan>
             <GridSpan>
-              <img alt="upvote" src="grayarrow.gif" />
+              <UnstyledButton onClick={() => upvoteStory(story.objectID)}>
+                <img alt="upvote" src="grayarrow.gif" />
+              </UnstyledButton>
             </GridSpan>
             <span>
               <a style={{ color: "black" }} href={story.url}>
@@ -79,12 +77,17 @@ function App({ initialStories }) {
                   </a>
                 )}{" "}
                 by <b style={{ color: "black" }}>{story.author}</b>{" "}
-
                 {new Date(story.created_at).toLocaleString("en-US", {
                   timeZone: "Asia/Kolkata",
                 })}{" "}
-
-                [<b style={{color:"black"}}>hide</b>]
+                [
+                <UnstyledButton
+                  onClick={() => hideStory(story.objectID)}
+                  style={{ color: "black" }}
+                >
+                  hide
+                </UnstyledButton>
+                ]
               </span>
             </span>
           </MainGrid>

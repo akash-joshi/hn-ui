@@ -9,17 +9,17 @@ const hnOrange = `rgb(255, 102, 0)`;
 
 const Header = styled.header`
   display: grid;
-  grid-template-columns: 90px 50px 60px 1fr;
+  grid-template-columns: 80px 50px 60px 1fr;
   color: black;
   background: ${hnOrange};
-  padding: 0.5em 1em;
+  padding: 0.5em;
   font-size: 0.9em;
 `;
 
 const MainGrid = styled.section`
   display: grid;
-  grid-template-columns: 90px 50px 60px 1fr;
-  padding: 0.5em 1em;
+  grid-template-columns: 80px 50px 60px 1fr;
+  padding: 0.5em;
   background: ${(props) =>
     props.odd ? `rgb(244,244,238)` : `rgb(229,229,222)`};
 `;
@@ -41,7 +41,15 @@ function App() {
   const { stories, hideStory, upvoteStory } = Data(page);
 
   return (
-    <div style={{ background: "rgb(244,244,238)", minHeight: "100vh" }}>
+    <div
+      style={{
+        background: "rgb(244,244,238)",
+        minHeight: "100vh",
+        maxWidth: "1200px",
+        marginLeft: "auto",
+        marginRight: "auto",
+      }}
+    >
       <Header>
         <span>Comments</span>
         <span>Vote Count</span>

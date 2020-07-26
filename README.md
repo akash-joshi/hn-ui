@@ -20,6 +20,14 @@ Github Actions is used to lint, build and test each commit to ensure nothing is 
 ### 5. Abstracting Data Layer:
 The complete data layer has been abstracted into the `data.js` file.
 
+### 6. Component Abstraction with lazy-loading:
+Each component gets its own file with its own CSS-in-JS. They are also loaded in lazily to avoid large bundle size.
+
+### 7. Testing using react-testing-library:
+Tests have been added to check API calls and rendering of each component.
+
+### 8. Responsive and PWA-ready
+
 ## Design Considerations:
 
 1. Header text is made black instead of white for higher a11y score.

@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import loadable from '@loadable/component'
 
 import "./App.css";
-import LineChart from "./LineChart";
 import Data from "./data";
 
+const LineChart = loadable(() => import("./LineChart"));
 const hnOrange = `rgb(255, 102, 0)`;
 
 const Header = styled.header`
@@ -128,26 +129,39 @@ function App() {
           borderTop: `4px solid ${hnOrange}`,
           borderBottom: `4px solid ${hnOrange}`,
           padding: "1em",
-          height: 300,
-          position: "relative",
         }}
       >
-        <b style={{ position: "absolute", bottom: "1em", left: "52%" }}>ID</b>
-        <b
-          style={{
-            position: "absolute",
-            top: "50%",
-            transform: "rotate(270deg)",
-          }}
-        >
-          Points
-        </b>
-        <LineChart
-          data={[
-            { id: 0 },
-            ...stories.map((el) => ({ points: el.points, id: el.objectID })),
-          ]}
-        />
+        <details>
+          <summary>Display Graph</summary>
+          <section
+            style={{
+              height: 300,
+              position: "relative",
+            }}
+          >
+            <b style={{ position: "absolute", bottom: "1em", left: "52%" }}>
+              ID
+            </b>
+            <b
+              style={{
+                position: "absolute",
+                top: "50%",
+                transform: "rotate(270deg)",
+              }}
+            >
+              Points
+            </b>
+            <LineChart
+              data={[
+                { id: 0 },
+                ...stories.map((el) => ({
+                  points: el.points,
+                  id: el.objectID,
+                })),
+              ]}
+            />
+          </section>
+        </details>
       </footer>
     </div>
   );

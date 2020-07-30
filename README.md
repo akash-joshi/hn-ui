@@ -7,6 +7,10 @@ A project to learn the best practises about web-development and accessibility by
 
 https://a11y-hn.herokuapp.com/
 
+## a11y Demo (Click on Image to go to Video):
+
+[![Video Thumbnail](https://i.postimg.cc/J73R37sf/Screenshot-2020-07-30-at-3-44-09-PM.png)](https://www.youtube.com/watch?v=InaNfygnBXw&feature=youtu.be)
+
 ## Performance, Accessibility, PWA Report
 
 ![Reports](https://i.postimg.cc/NF8G5BXw/Screenshot-2020-07-30-at-3-41-11-PM.png)

@@ -3,6 +3,14 @@
 
 A project to learn the best practises about web-development and accessibility by building a HN clone in create-react-app with SSR.
 
+## Heroku Link:
+
+https://a11y-hn.herokuapp.com/
+
+## Performance, Accessibility, PWA Report
+
+![Reports](https://i.postimg.cc/NF8G5BXw/Screenshot-2020-07-30-at-3-41-11-PM.png)
+
 ## About the Tech Stack:
 
 ### 1. Linting and Prettifying Code:

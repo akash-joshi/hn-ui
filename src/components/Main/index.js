@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Data from "./data";
+import Data from "../data";
 
 const MainGrid = styled.section`
   display: grid;

@@ -19,6 +19,6 @@ test('renders main and calls api', async () => {
 
 test('renders footer', async () => {
   const { getByText } = render(<Footer />);
-  const linkElement = getByText(/Display Graph/i)
+  const linkElement = getByText(/ID/i)
   expect(linkElement);
 });

@@ -8,6 +8,8 @@ const LineChart = loadable(() => import("./LineChart"));
 export default function Footer({ hnOrange, page }) {
   const { stories } = Data(page);
 
+  console.log(stories);
+
   return (
     <footer
       style={{
@@ -16,15 +18,15 @@ export default function Footer({ hnOrange, page }) {
         padding: "1em",
       }}
     >
-      <details>
-        <summary>Display Graph</summary>
+      {/* <details>
+        <summary>Display Graph</summary> */}
         <section
           style={{
             height: 300,
             position: "relative",
           }}
         >
-          <b style={{ position: "absolute", bottom: "1em", left: "52%" }}>ID</b>
+          <b style={{ position: "absolute", bottom: "0em", left: "52%" }}>ID</b>
           <b
             style={{
               position: "absolute",
@@ -36,7 +38,6 @@ export default function Footer({ hnOrange, page }) {
           </b>
           <LineChart
             data={[
-              { id: 0 },
               ...stories.map((el) => ({
                 points: el.points,
                 id: el.objectID,
@@ -44,7 +45,7 @@ export default function Footer({ hnOrange, page }) {
             ]}
           />
         </section>
-      </details>
+      {/* </details> */}
     </footer>
   );
 }

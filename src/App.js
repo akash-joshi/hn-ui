@@ -21,7 +21,7 @@ const Body = styled.div`
 function App() {
   const isBrowser = typeof window !== `undefined`;
 
-  const page = isBrowser ? parseInt(location.href.split("page=")[1]) || 1 : 1;
+  const page = isBrowser ? parseInt(location.href.split("/page/")[1]) || 1 : 1;
 
   return (
     <Body>

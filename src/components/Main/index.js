@@ -34,7 +34,7 @@ export default function Main({ page, hnOrange }) {
           <GridSpan className="hide-on-mobile">{story.points}</GridSpan>
           <GridSpan>
             <UnstyledButton onClick={() => upvoteStory(story.objectID)}>
-              <img alt="upvote" src="grayarrow.gif" />
+              <img alt="upvote" src="/grayarrow.gif" />
             </UnstyledButton>
             <div className="show-on-mobile">
                 {story.points}
@@ -87,12 +87,12 @@ export default function Main({ page, hnOrange }) {
             marginRight: "0.5em",
             color: page !== 1 ? hnOrange : "rgb(122, 121, 121)",
           }}
-          href={page !== 1 ? `/?page=${page - 1}` : "#"}
+          href={page !== 1 ? `/page/${page - 1}` : "#"}
         >
           Previous
         </a>
         <span style={{ marginRight: "0.5em" }}>|</span>
-        <a style={{ color: hnOrange }} href={`/?page=${page + 1}`}>
+        <a style={{ color: hnOrange }} href={`/page/${page + 1}`}>
           Next
         </a>
       </div>

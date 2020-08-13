@@ -31,6 +31,7 @@
     "tests": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "start:prod": "npm run build && node server/bootstrap.js",
+    "start:dev": "npx nodemon -i build --exec npm run start:prod",
     "lint": "eslint --ext js,jsx,tsx . --fix --quiet"
   },
   "eslintConfig": {

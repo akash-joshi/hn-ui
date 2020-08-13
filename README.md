@@ -15,6 +15,10 @@ https://a11y-hn.herokuapp.com/
 
 ![Reports](https://i.postimg.cc/NF8G5BXw/Screenshot-2020-07-30-at-3-41-11-PM.png)
 
+## CI/Tests
+
+![Tests Screenshot](https://i.postimg.cc/XvTpjXBK/Screenshot-2020-08-13-at-1-48-49-PM.png)
+
 ## About the Tech Stack:
 
 ### 1. Linting and Prettifying Code:

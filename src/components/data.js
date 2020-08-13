@@ -5,7 +5,7 @@ export default function Data(page) {
   const fetchStories = (page, hiddenStories, upvotedStories) => {
     axios
       .get(
-        `https://hn.algolia.com/api/v1/search_by_date?tags=story&page=${page}`
+        `https://hn.algolia.com/api/v1/search?page=${page}&query=react&hitsPerPage=15`
       )
       .then((r) => {
         setStories(

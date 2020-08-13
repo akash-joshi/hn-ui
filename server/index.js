@@ -12,10 +12,12 @@ const router = express.Router();
 // root (/) should always serve our server rendered page
 router.use("^/$", serverRenderer);
 
+router.use("/page/:id", serverRenderer);
+
 router.use(
-  expressStaticGzip(path.join(__dirname, 'build'), {
-  enableBrotli: true, // only if you have brotli files too
-  }),
+  expressStaticGzip(path.join(__dirname, "build"), {
+    enableBrotli: true, // only if you have brotli files too
+  })
 );
 
 // other static resources should just be served as they are

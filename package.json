@@ -14,6 +14,7 @@
     "babel-plugin-transform-assets": "^1.0.2",
     "express": "^4.17.1",
     "express-static-gzip": "^2.0.7",
+    "frappe-charts": "^1.5.2",
     "ignore-styles": "^5.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -30,6 +31,7 @@
     "tests": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "start:prod": "npm run build && node server/bootstrap.js",
+    "start:dev": "npx nodemon -i build --exec npm run start:prod",
     "lint": "eslint --ext js,jsx,tsx . --fix --quiet"
   },
   "eslintConfig": {
